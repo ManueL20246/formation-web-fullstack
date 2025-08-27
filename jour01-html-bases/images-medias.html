@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images, Vidéos et Audio</title>
+</head>
+<body>
+    <header>
+        <h1>Maîtriser les Médias en HTML</h1>
+    </header>
+
+    <main>
+        <!-- SECTION IMAGES -->
+        <section>
+            <h2>1. Images</h2>
+            
+            <h3>Image simple</h3>
+            <img src="https://picsum.photos/400/200" alt="Image aléatoire" width="400" height="200">
+            
+            <h3>Figure avec légende</h3>
+            <figure>
+                <img src="https://picsum.photos/300/200?random=1" alt="Paysage">
+                <figcaption>Une belle image de paysage avec sa légende</figcaption>
+            </figure>
+            
+            <h3>Image responsive</h3>
+            <img src="https://picsum.photos/800/400?random=2" alt="Image responsive" 
+                 style="max-width: 100%; height: auto; border: 2px solid #ccc;">
+        </section>
+
+        <!-- SECTION VIDÉOS -->
+        <section>
+            <h2>2. Vidéos</h2>
+            
+            <h3>Vidéo avec contrôles</h3>
+            <video width="400" height="300" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+                Votre navigateur ne supporte pas la balise vidéo.
+            </video>
+            
+            <h3>Vidéo avec options avancées</h3>
+            <video width="400" height="300" controls autoplay muted loop poster="https://picsum.photos/400/300?random=3">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                <p>Votre navigateur ne supporte pas la vidéo HTML5.</p>
+            </video>
+            
+            <h3>Vidéo intégrée (YouTube)</h3>
+            <iframe width="400" height="300" 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="Vidéo YouTube" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </section>
+
+        <!-- SECTION AUDIO -->
+        <section>
+            <h2>3. Audio</h2>
+            
+            <h3>Audio avec contrôles</h3>
+            <audio controls>
+                <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas l'audio HTML5.
+            </audio>
+            
+            <h3>Audio avec options</h3>
+            <audio controls preload="auto" loop>
+                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                <p>Votre navigateur ne supporte pas l'audio HTML5.</p>
+            </audio>
+            
+            <h3>Musique de fond (désactivée par défaut)</h3>
+            <audio controls muted>
+                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                Audio non supporté.
+            </audio>
+        </section>
+
+        <!-- SECTION FORMATS SUPPORTÉS -->
+        <section>
+            <h2>4. Formats Supportés</h2>
+            
+            <h3>Formats Vidéo</h3>
+            <ul>
+                <li><strong>MP4</strong> - Le plus compatible (.mp4)</li>
+                <li><strong>WebM</strong> - Moderne et léger (.webm)</li>
+                <li><strong>Ogg</strong> - Open source (.ogg)</li>
+            </ul>
+            
+            <h3>Formats Audio</h3>
+            <ul>
+                <li><strong>MP3</strong> - Le plus compatible (.mp3)</li>
+                <li><strong>WAV</strong> - Haute qualité (.wav)</li>
+                <li><strong>Ogg</strong> - Open source (.ogg)</li>
+            </ul>
+        </section>
+
+        <!-- SECTION ATTRIBUTS IMPORTANTS -->
+        <section>
+            <h2>5. Attributs Importants</h2>
+            
+            <h3>Pour les Vidéos :</h3>
+            <ul>
+                <li><code>controls</code> - Affiche les contrôles</li>
+                <li><code>autoplay</code> - Lecture automatique</li>
+                <li><code>muted</code> - Son coupé (requis pour autoplay)</li>
+                <li><code>loop</code> - Lecture en boucle</li>
+                <li><code>poster</code> - Image d'aperçu</li>
+                <li><code>preload</code> - Préchargement (auto/metadata/none)</li>
+            </ul>
+            
+            <h3>Pour les Images :</h3>
+            <ul>
+                <li><code>alt</code> - Texte alternatif (obligatoire !)</li>
+                <li><code>width/height</code> - Dimensions</li>
+                <li><code>loading</code> - Chargement paresseux (lazy)</li>
+            </ul>
+        </section>
+
+        <!-- BONNES PRATIQUES -->
+        <section>
+            <h2>6. Bonnes Pratiques</h2>
+            
+            <div style="background-color: #f0f8ff; padding: 15px; border-left: 4px solid #007acc;">
+                <h4>✅ À faire :</h4>
+                <ul>
+                    <li>Toujours inclure l'attribut <code>alt</code> pour les images</li>
+                    <li>Optimiser la taille des médias pour le web</li>
+                    <li>Fournir plusieurs formats pour la compatibilité</li>
+                    <li>Utiliser <code>muted</code> avec <code>autoplay</code></li>
+                </ul>
+            </div>
+            
+            <div style="background-color: #fff0f0; padding: 15px; border-left: 4px solid #cc0000; margin-top: 10px;">
+                <h4>❌ À éviter :</h4>
+                <ul>
+                    <li>Autoplay avec son activé (mauvaise UX)</li>
+                    <li>Fichiers médias trop lourds</li>
+                    <li>Images sans attribut <code>alt</code></li>
+                    <li>Dépendre d'un seul format</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Formation HTML Médias</p>
+    </footer>
+</body>
+</html>
