@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maîtriser les Formulaires HTML</title>
+</head>
+<body>
+    <header>
+        <h1>Formulaires HTML5 Complets</h1>
+    </header>
+
+    <main>
+        <!-- FORMULAIRE DE CONTACT -->
+        <section>
+            <h2>1. Formulaire de Contact</h2>
+            <form action="#" method="post">
+                <div>
+                    <label for="nom">Nom complet :</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                
+                <div>
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div>
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" rows="5" cols="40" required></textarea>
+                </div>
+                
+                <div>
+                    <button type="submit">Envoyer</button>
+                    <button type="reset">Effacer</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- TOUS LES TYPES D'INPUTS -->
+        <section>
+            <h2>2. Tous les Types d'Inputs HTML5</h2>
+            <form action="#" method="post">
+                
+                <h3>Textes et Emails</h3>
+                <div>
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                </div>
+                
+                <div>
+                    <label for="email2">Email :</label>
+                    <input type="email" id="email2" name="email2" placeholder="nom@gmail.com" required>
+                </div>
+                
+                <div>
+                    <label for="motdepasse">Mot de passe :</label>
+                    <input type="password" id="motdepasse" name="motdepasse" minlength="6" required>
+                </div>
+                
+                <div>
+                    <label for="recherche">Recherche :</label>
+                    <input type="search" id="recherche" name="recherche" placeholder="Tapez votre recherche...">
+                </div>
+
+                <h3>Numéros et Dates</h3>
+                <div>
+                    <label for="age">Âge :</label>
+                    <input type="number" id="age" name="age" min="18" max="100" value="25">
+                </div>
+                
+                <div>
+                    <label for="prix">Prix (€) :</label>
+                    <input type="number" id="prix" name="prix" min="0" step="0.01" placeholder="0.00">
+                </div>
+                
+                <div>
+                    <label for="naissance">Date de naissance :</label>
+                    <input type="date" id="naissance" name="naissance">
+                </div>
+                
+                <div>
+                    <label for="heure">Heure préférée :</label>
+                    <input type="time" id="heure" name="heure">
+                </div>
+                
+                <div>
+                    <label for="rdv">Rendez-vous :</label>
+                    <input type="datetime-local" id="rdv" name="rdv">
+                </div>
+
+                <h3>Contact et Web</h3>
+                <div>
+                    <label for="telephone">Téléphone :</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="+237(658116598)">
+                </div>
+                
+                <div>
+                    <label for="siteweb">Site web :</label>
+                    <input type="url" id="siteweb" name="siteweb" placeholder="https://monsite.com">
+                </div>
+
+                <h3>Sélections</h3>
+                <div>
+                    <label for="couleur">Couleur préférée :</label>
+                    <input type="color" id="couleur" name="couleur" value="#007acc">
+                </div>
+                
+                <div>
+                    <label for="volume">Volume :</label>
+                    <input type="range" id="volume" name="volume" min="0" max="100" value="50">
+                </div>
+
+                <h3>Fichiers</h3>
+                <div>
+                    <label for="photo">Photo de profil :</label>
+                    <input type="file" id="photo" name="photo" accept="image/*">
+                </div>
+                
+                <div>
+                    <label for="documents">Documents (multiples) :</label>
+                    <input type="file" id="documents" name="documents" multiple accept=".pdf,.doc,.docx">
+                </div>
+
+                <div>
+                    <button type="submit">Soumettre tout</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- CASES À COCHER ET BOUTONS RADIO -->
+        <section>
+            <h2>3. Cases à Cocher et Boutons Radio</h2>
+            <form action="#" method="post">
+                
+                <h3>Checkboxes (choix multiples)</h3>
+                <fieldset>
+                    <legend>Langages de programmation que vous connaissez :</legend>
+                    <div>
+                        <input type="checkbox" id="html" name="langages[]" value="html">
+                        <label for="html">HTML</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="css" name="langages[]" value="css">
+                        <label for="css">CSS</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="js" name="langages[]" value="javascript">
+                        <label for="js">JavaScript</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="react" name="langages[]" value="react">
+                        <label for="react">React</label>
+                    </div>
+                </fieldset>
+
+                <h3>Radio Buttons (choix unique)</h3>
+                <fieldset>
+                    <legend>Niveau d'expérience :</legend>
+                    <div>
+                        <input type="radio" id="debutant" name="niveau" value="debutant" checked>
+                        <label for="debutant">Débutant</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="intermediaire" name="niveau" value="intermediaire">
+                        <label for="intermediaire">Intermédiaire</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="expert" name="niveau" value="expert">
+                        <label for="expert">Expert</label>
+                    </div>
+                </fieldset>
+
+                <div>
+                    <button type="submit">Valider les choix</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- LISTES DÉROULANTES -->
+        <section>
+            <h2>4. Listes Déroulantes (Select)</h2>
+            <form action="#" method="post">
+                
+                <div>
+                    <label for="pays">Pays :</label>
+                    <select id="pays" name="pays" required>
+                        <option value="">-- Choisir un pays --</option>
+                        <option value="fr">France</option>
+                        <option value="be">Belgique</option>
+                        <option value="ch">Suisse</option>
+                        <option value="ca">Canada</option>
+                        <option value="cm">Cameroun</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="frameworks">Frameworks (choix multiple) :</label>
+                    <select id="frameworks" name="frameworks[]" multiple size="4">
+                        <option value="react">React</option>
+                        <option value="vue">Vue.js</option>
+                        <option value="angular">Angular</option>
+                        <option value="svelte">Svelte</option>
+                        <option value="nextjs">Next.js</option>
+                    </select>
+                    <small>Maintenez Ctrl (Cmd sur Mac) pour sélectionner plusieurs options</small>
+                </div>
+
+                <div>
+                    <label for="villes">Ville avec groupes :</label>
+                    <select id="villes" name="ville">
+                        <optgroup label="France">
+                            <option value="paris">Paris</option>
+                            <option value="lyon">Lyon</option>
+                            <option value="marseille">Marseille</option>
+                        </optgroup>
+                        <optgroup label="Cameroun">
+                            <option value="yaounde">Yaoundé</option>
+                            <option value="douala">Douala</option>
+                            <option value="bafoussam">Bafoussam</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div>
+                    <button type="submit">Envoyer sélection</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

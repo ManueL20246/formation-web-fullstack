@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maîtriser les Tableaux HTML</title>
+    <style>
+        /* CSS minimal pour voir les bordures */
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        .center { text-align: center; }
+        .number { text-align: right; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tableaux HTML - Du Simple au Complexe</h1>
+    </header>
+
+    <main>
+        <!-- TABLEAU BASIQUE -->
+        <section>
+            <h2>1. Tableau Simple - Technologies Web</h2>
+            <table>
+                <tr>
+                    <th>Technologie</th>
+                    <th>Type</th>
+                    <th>Difficulté</th>
+                    <th>Temps d'apprentissage</th>
+                </tr>
+                <tr>
+                    <td>HTML</td>
+                    <td>Markup</td>
+                    <td>Facile</td>
+                    <td>1 semaine</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td>Style</td>
+                    <td>Moyen</td>
+                    <td>2 semaines</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>Programmation</td>
+                    <td>Difficile</td>
+                    <td>3 mois</td>
+                </tr>
+                <tr>
+                    <td>React</td>
+                    <td>Framework</td>
+                    <td>Difficile</td>
+                    <td>2 mois</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- TABLEAU AVEC STRUCTURE COMPLÈTE -->
+        <section>
+            <h2>2. Tableau Structuré - Résultats de Formation</h2>
+            <table>
+                <caption>Progression de ma formation développement web</caption>
+                <thead>
+                    <tr>
+                        <th>Module</th>
+                        <th>Durée (jours)</th>
+                        <th>Note (/20)</th>
+                        <th>Statut</th>
+                        <th>Projets réalisés</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML5 Fondamentaux</td>
+                        <td class="center">2</td>
+                        <td class="center">18</td>
+                        <td>✅ Terminé</td>
+                        <td class="center">3</td>
+                    </tr>
+                    <tr>
+                        <td>CSS3 Responsive</td>
+                        <td class="center">3</td>
+                        <td class="center">16</td>
+                        <td>🔄 En cours</td>
+                        <td class="center">2</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript ES6+</td>
+                        <td class="center">5</td>
+                        <td class="center">-</td>
+                        <td>⏳ À venir</td>
+                        <td class="center">0</td>
+                    </tr>
+                    <tr>
+                        <td>React Hooks</td>
+                        <td class="center">4</td>
+                        <td class="center">-</td>
+                        <td>⏳ À venir</td>
+                        <td class="center">0</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <th class="center">14</th>
+                        <th class="center">17/20</th>
+                        <th>25% complété</th>
+                        <th class="center">5</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- TABLEAU AVEC FUSION DE CELLULES -->
+        <section>
+            <h2>3. Tableau Avancé - Planning de Formation</h2>
+            <table>
+                <caption>Mon planning de formation - Semaine 1 à 3</caption>
+                <thead>
+                    <tr>
+                        <th>Jour</th>
+                        <th>Matin (4h)</th>
+                        <th>Après-midi (4h)</th>
+                        <th>Projet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- SEMAINE 1 -->
+                    <tr>
+                        <td rowspan="5"><strong>SEMAINE 1<br>HTML/CSS</strong></td>
+                        <td>HTML5 Bases</td>
+                        <td>Structure sémantique</td>
+                        <td>CV Personnel</td>
+                    </tr>
+                    <tr>
+                        <td>HTML5 Avancé</td>
+                        <td>Formulaires</td>
+                        <td>Formulaire contact</td>
+                    </tr>
+                    <tr>
+                        <td>CSS3 Bases</td>
+                        <td>Box Model, Flexbox</td>
+                        <td>Styliser CV</td>
+                    </tr>
+                    <tr>
+                        <td>CSS Grid</td>
+                        <td>Responsive Design</td>
+                        <td>Portfolio responsive</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="center"><em>Révisions et projet intégré</em></td>
+                        <td>Site web complet</td>
+                    </tr>
+                    
+                    <!-- SEMAINE 2 -->
+                    <tr>
+                        <td rowspan="5"><strong>SEMAINE 2<br>JavaScript</strong></td>
+                        <td>JS Fondamentaux</td>
+                        <td>DOM Manipulation</td>
+                        <td>Calculatrice</td>
+                    </tr>
+                    <tr>
+                        <td>Événements</td>
+                        <td>Formulaires JS</td>
+                        <td>To-Do App</td>
+                    </tr>
+                    <tr>
+                        <td>Arrays & Objects</td>
+                        <td>Local Storage</td>
+                        <td>Gestionnaire tâches</td>
+                    </tr>
+                    <tr>
+                        <td>ES6+ Features</td>
+                        <td>Async/Await</td>
+                        <td>App météo</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="center"><em>Projet JavaScript avancé</em></td>
+                        <td>Application interactive</td>
+                    </tr>
+                    
+                    <!-- SEMAINE 3 -->
+                    <tr>
+                        <td rowspan="3"><strong>SEMAINE 3<br>Outils Pro</strong></td>
+                        <td>Git/GitHub</td>
+                        <td>Build Tools</td>
+                        <td>Workflow projet</td>
+                    </tr>
+                    <tr>
+                        <td>Sass/SCSS</td>
+                        <td>JavaScript Modules</td>
+                        <td>Architecture propre</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="center"><em>Préparation React</em></td>
+                        <td>Setup environnement</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- TABLEAU FINANCIER -->
+        <section>
+            <h2>4. Tableau de Données - Budget Formation</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Catégorie</th>
+                        <th>Détail</th>
+                        <th class="number">Prix unitaire</th>
+                        <th class="center">Quantité</th>
+                        <th class="number">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3">Matériel</td>
+                        <td>Ordinateur portable</td>
+                        <td class="number">800,00 €</td>
+                        <td class="center">1</td>
+                        <td class="number">800,00 €</td>
+                    </tr>
+                    <tr>
+                        <td>Écran externe</td>
+                        <td class="number">250,00 €</td>
+                        <td class="center">1</td>
+                        <td class="number">250,00 €</td>
+                    </tr>
+                    <tr>
+                        <td>Accessoires</td>
+                        <td class="number">100,00 €</td>
+                        <td class="center">1</td>
+                        <td class="number">100,00 €</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Formation</td>
+                        <td>Cours en ligne</td>
+                        <td class="number">50,00 €</td>
+                        <td class="center">3</td>
+                        <td class="number">150,00 €</td>
+                    </tr>
+                    <tr>
+                        <td>Livres techniques</td>
+                        <td class="number">30,00 €</td>
+                        <td class="center">4</td>
+                        <td class="number">120,00 €</td>
+                    </tr>
+                    <tr>
+                        <td>Services</td>
+                        <td>Hébergement web (1 an)</td>
+                        <td class="number">60,00 €</td>
+                        <td class="center">1</td>
+                        <td class="number">60,00 €</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="4">TOTAL INVESTISSEMENT</th>
+                        <th class="number">1 480,00 €</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- BONNES PRATIQUES -->
+        <section>
+            <h2>5. Éléments et Attributs Importants</h2>
+            
+            <h3>Structure d'un tableau :</h3>
+            <ul>
+                <li><code>&lt;table&gt;</code> - Conteneur principal</li>
+                <li><code>&lt;caption&gt;</code> - Titre du tableau</li>
+                <li><code>&lt;thead&gt;</code> - En-tête du tableau</li>
+                <li><code>&lt;tbody&gt;</code> - Corps du tableau</li>
+                <li><code>&lt;tfoot&gt;</code> - Pied du tableau</li>
+                <li><code>&lt;tr&gt;</code> - Ligne (table row)</li>
+                <li><code>&lt;th&gt;</code> - Cellule d'en-tête (table header)</li>
+                <li><code>&lt;td&gt;</code> - Cellule de données (table data)</li>
+            </ul>
+            
+            <h3>Attributs utiles :</h3>
+            <ul>
+                <li><code>colspan="2"</code> - Fusion horizontale (2 colonnes)</li>
+                <li><code>rowspan="3"</code> - Fusion verticale (3 lignes)</li>
+                <li><code>scope="col"</code> - Pour l'accessibilité (en-tête de colonne)</li>
+                <li><code>scope="row"</code> - Pour l'accessibilité (en-tête de ligne)</li>
+            </ul>
+
+            <div style="background-color: #f0f8ff; padding: 15px; border-left: 4px solid #007acc;">
+                <h4>✅ Bonnes pratiques :</h4>
+                <ul>
+                    <li>Utilisez <code>&lt;th&gt;</code> pour les en-têtes</li>
+                    <li>Ajoutez un <code>&lt;caption&gt;</code> descriptif</li>
+                    <li>Structurez avec <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code></li>
+                    <li>Alignez les données numériques à droite</li>
+                    <li>Évitez les tableaux pour la mise en page (utilisez CSS Grid/Flexbox)</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Formation Tableaux HTML</p>
+    </footer>
+</body>
+</html>

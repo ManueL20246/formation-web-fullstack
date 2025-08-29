@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'Inscription Complet en HTML5</title>
+    <style>
+        /* CSS minimal pour voir les bordures */
+        table { border-collapse: collapse; width: 50%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 5px; text-align: left; }
+    </style>
+</head>
+<body>
+    <!-- En-tête du site -->
+    <header>
+        <h1>Inscription à la Formation Développeur Full-Stack</h1>
+        
+        <nav>
+            <h3>Navigation Rapide : </h3>
+            <ul>
+                <li><a href="#personnalinformation">Informations personnelles</a></li>
+                <li><a href="#useraccount">Compte utilisateur</a></li>
+                <li><a href="#address">Adresse</a></li>
+                <li><a href="#preferences">Préférences</a></li>
+                <li><a href="#files">Fichiers</a></li>
+                <li><a href="#rates">Tarifs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <main>
+        <section id="personnalinformation">
+            <h2>1. Informations Personnelles</h2>
+            <form action="#" method="post">
+                
+                <div>
+                    <label for="prenom_complet">Prénom :</label>
+                    <input type="text" id="prenom_complet" name="prenom" pattern="^[a-zA-ZÀ-ÿ\s]{2,30}$" 
+                            title="2-30 caractères, lettres uniquement" placeholder="entrez votre prénom" required>
+                </div>
+                <br>
+                <div>
+                    <label for="nom_complet">Nom :</label>
+                    <input type="text" id="nom_complet" name="nom" pattern="^[a-zA-ZÀ-ÿ\s]{2,30}$" 
+                            title="2-30 caractères, lettres uniquement" placeholder="entrez votre nom" required>
+                </div>
+                <br>
+                <div>
+                    <label for="naissance_complet">Date de naissance :</label>
+                    <input type="date" id="naissance_complet" name="naissance" min="1950-01-01" max="2005-12-31" 
+                            title="Majeur requis" required>
+                </div>
+                <br>
+                <div>
+                    <label for="sexe">Sexe :</label>
+                    <ul>
+                        <li><input type="radio" id="homme" name="sexe" value="homme"><label for="homme"> Homme</label></li>
+                        <li><input type="radio" id="femme" name="sexe" value="femme"><label for="femme"> Femme</label></li>
+                        <li><input type="radio" id="autre" name="sexe" value="autre"><label for="autre"> Autre</label></li>
+                    </ul>
+                </div>
+            </form>
+        </section>
+
+        <section id="useraccount">
+            <h2>2. Compte utilisateur</h2>
+            <form action="#" method="post">
+                
+                <div>
+                    <label for="username">Nom d'utilisateur :</label>
+                    <input type="text" id="username" name="username" pattern="^[a-zA-Z0-9_]{3,15}$" 
+                            title="3-15 lettres, chiffres et underscore uniquement" placeholder="Christ_James2334" required>
+                </div>
+                <br>
+                <div>
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" title="Format email obligatoire" placeholder="nom@gmail.com" required>
+                </div>
+                <br>
+                <div>
+                    <label for="confirmationemail">Confirmation email :</label>
+                    <input type="email" id="confirmationemail" name="confirmationemail" title="Doit être identique au premier" required>
+                </div>
+                <br>
+                <div>
+                    <label for="motdepasse">Mot de passe :</label>
+                    <input type="password" id="motdepasse" name="motdepasse"
+                           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                           title="8 caractères minimum, 1 majuscule, 1 minuscule, 1 chiffre, 1 symbole" required>
+                </div>
+                <br>
+                <div>
+                    <label for="confirmationmotdepasse">Confirmation mot de passe :</label>
+                    <input type="password" id="confirmationmotdepasse" name="confirmationmotdepasse"
+                           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                           title="Identique au mot de passe" required>
+                </div>
+            </form>
+        </section>
+
+        <section id="address">
+            <h2>3. Adresse</h2>
+            <form action="#" method="post">
+
+                <div>
+                    <label for="adressecomplete">Adresse complète :</label>
+                    <textarea id="adressecomplete" name="adressecomplete" cols="50" rows="5" minlength="20" maxlength="200" 
+                              placeholder="En 50-200 caractères..." required></textarea>
+                </div>
+                <br>
+                <div>
+                    <label for="codepostal">Code postal :</label>
+                    <input type="text" id="codepostal" name="codepostal" pattern="[0-9]{5}" placeholder="75001" 
+                           title="5 chiffres uniquement" required>
+                </div>
+                <br>
+                <div>
+                    <label for="ville">Ville :</label>
+                    <input type="text" id="ville" name="ville" required>
+                </div>
+                <br>
+                <div>
+                    <label for="pays">Pays :</label>
+                    <select id="pays" name="pays" required>
+                        <option value="">-- Choisir un pays --</option>
+                        <option value="fr">France</option>
+                        <option value="be">Belgique</option>
+                        <option value="ch">Suisse</option>
+                        <option value="ca">Canada</option>
+                        <option value="cm">Cameroun</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="tel">Téléphone :</label>
+                    <input type="tel" id="tel" name="tel" pattern="^(\+33|0)[1-9](\d{8})$" 
+                           placeholder="0123456789 ou +33123456789" required>
+                </div>
+            </form>
+        </section>
+
+        <section id="preferences">
+            <h2>4. Préférences de Formation</h2>
+            <form action="#" method="post">
+                
+                <h3>Langages qui vous intéressent : (choix multiples)</h3>
+                    <div>
+                        <li>
+                            <input type="checkbox" id="html/css" name="langages[]" value="html/css"> <label for="html">HTML/CSS</label>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <input type="checkbox" id="js" name="langages[]" value="javascript"> <label for="js">JavaScript</label>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <input type="checkbox" id="react" name="langages[]" value="react"> <label for="react">React</label>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <input type="checkbox" id="node" name="langages[]" value="node"> <label for="node">Node.js</label>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <input type="checkbox" id="python" name="langages[]" value="python"> <label for="python">Python</label>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <input type="checkbox" id="php" name="langages[]" value="php"> <label for="php">PHP</label>
+                        </li>
+                    </div>
+
+                <h3>Rythme de formation : (choix unique)</h3>
+                    <div>
+                        <li>
+                            <input type="radio" id="tempsplein" name="rythme" value="tempsplein"> <label for="tempsplein">Temps plein (6-8h/jour)</label>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <input type="radio" id="tempspartiel" name="rythme" value="tempspartiel"> <label for="tempspartiel">Temps partiel (2-3h/jour)</label>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <input type="radio" id="weekend" name="rythme" value="weekend"> <label for="weekend">Week-ends uniquement</label>
+                        </li>
+                    </div>
+
+                <h3>Expérience en programmation :</h3>
+                    <div>
+                        <li>
+                            <input type="radio" id="aucune" name="niveau" value="aucune"> <label for="aucune">Aucune expérience</label>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <input type="radio" id="debutant" name="niveau" value="debutant"> <label for="debutant">Quelques notions</label>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <input type="radio" id="intermediaire" name="niveau" value="intermediaire"> <label for="intermediaire">Niveau Intermédiaire</label>
+                        </li>
+                    </div>
+                    <div>
+                        <li>
+                            <input type="radio" id="expert" name="niveau" value="expert"> <label for="expert">Experimenté</label>
+                        </li>
+                    </div>
+            </form>
+        </section>
+
+        <section id="files">
+            <h2>5. Upload de Fichiers</h2>
+            <form action="#" method="post">
+                
+                <div>
+                    <label for="photo">Photo de profil :</label>
+                    <input type="file" id="photo" name="photo" accept="image/*">
+                </div>
+                <br>
+                <div>
+                    <label for="cv">CV (PDF uniquement) :</label>
+                    <input type="file" id="cv" name="cv" accept=".pdf">
+                </div>
+                <br>
+                <div>
+                    <label for="lettremotivation">Lettre de motivation :</label>
+                    <textarea id="lettremotivation" name="lettremotivation" cols="50" rows="8" minlength="100" maxlength="500" 
+                              placeholder="Entre 100 et 500 caractères..." required></textarea>
+                </div>
+            </form>
+        </section>
+
+        <section id="rates">
+            <h2>6. Récapitulatif Tarifaire</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Formation</th>
+                        <th>Durée</th>
+                        <th>Prix individuel</th>
+                        <th>Réduction</th>
+                        <th>Prix final</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Pack Débutant</b> (HTML, CSS, Javascript)</td>
+                        <td>3 mois</td>
+                        <td>1200 €</td>
+                        <td>-20%</td>
+                        <td><b>960 €</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>Pack Intermédiaire</b> (React, Node.js)</td>
+                        <td>5 mois</td>
+                        <td>2000 €</td>
+                        <td>-15%</td>
+                        <td><b>1700 €</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>Pack Expert</b> (Bases de Données, DevOps)</td>
+                        <td>8 mois</td>
+                        <td>3200 €</td>
+                        <td>-25%</td>
+                        <td><b>2400 €</b></td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+            <div>
+                <label for="packchoisi">Pack choisi :</label>
+                    <select id="packchoisi" name="packchoisi" required>
+                        <option value="">-- Choisir un pack --</option>
+                        <option value="debut">Pack débutant</option>
+                        <option value="inter">Pack intermédiaire</option>
+                        <option value="fort">Pack expert</option>
+                    </select>
+            </div>
+        </section>
+
+        <section>
+            <h2>7. Validation et Acceptation</h2>
+            <form action="#" method="post">
+                <div>
+                    <input type="checkbox" id="acceptecondition" name="confidentialite" value="acceptecondition">
+                    <label for="acceptecondition">J'accepte les conditions générales d'utilisation</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="acceptereception" name="confidentialite" value="acceptereception">
+                    <label for="acceptereception">J'accepte de recevoir des informations sur les nouvelles formations</label>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="accepteconfirmation" name="confidentialite" value="accepteconfirmation">
+                    <label for="accepteconfirmation">Je confirme que toutes les informations fournies sont exactes</label>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <form action="#" method="post" id="formulaire">
+                <br>
+                <div>
+                    <button type="submit" id="soumettre" value="soumettre">Soumettre l'inscription</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="reset" id="annuler" value="annuler">Effacer le formulaire</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2025 - Ecole de developpement web</p>
+    </footer>
+</body>
+
+    <!-- SCRIPT POUR Confirmation d'email et mot de passe -->
+    <script>
+        // Messages personnalisé pour l'email
+        const form = document.getElementById('formulaire');
+        const email1 = document.getElementById('email');
+        const email2 = document.getElementById('confirmationemail');
+        const mdp1 = document.getElementById('motdepasse');
+        const mdp2 = document.getElementById('confirmationmotdepasse');
+        
+        form.addEventListener('submit', function(e) {
+            if (email1.value !== email2.value) {
+                email2.setCustomValidity('Les emails ne correspondent pas');
+                e.preventDefault();
+            } else {
+                email2.setCustomValidity('');
+            }
+        });
+
+        form.addEventListener('submit', function(e) {
+            if (mdp1.value !== mdp2.value) {
+                mdp2.setCustomValidity('Les mots de passe ne correspondent pas');
+                e.preventDefault();
+            } else {
+                mdp2.setCustomValidity('');
+            }
+        });
+        
+        email2.addEventListener('input', function() {
+            if (email1.value === email2.value) {
+                email2.setCustomValidity('');
+            }
+        });
+
+        mdp2.addEventListener('input', function() {
+            if (mdp1.value === mdp2.value) {
+                mdp2.setCustomValidity('');
+            }
+        });
+    </script>
+
+</html>

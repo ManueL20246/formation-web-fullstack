@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation HTML5 Avancée</title>
+</head>
+<body>
+    <header>
+        <h1>Validation HTML5 - Formulaires Intelligents</h1>
+    </header>
+
+    <main>
+        <!-- VALIDATION BASIQUE -->
+        <section>
+            <h2>1. Validations de Base</h2>
+            <form action="#" method="post">
+                
+                <div>
+                    <label for="nom">Nom (obligatoire) :</label>
+                    <input type="text" id="nom" name="nom" required>
+                    <small>Ce champ est obligatoire</small>
+                </div>
+                
+                <div>
+                    <label for="email">Email (format validé) :</label>
+                    <input type="email" id="email" name="email" required>
+                    <small>Format: nom@gmail.com</small>
+                </div>
+                
+                <div>
+                    <label for="url">Site web (URL complète) :</label>
+                    <input type="url" id="url" name="url" required>
+                    <small>Format: https://monsite.com</small>
+                </div>
+                
+                <div>
+                    <label for="tel">Téléphone français :</label>
+                    <input type="tel" id="tel" name="tel"  
+                           placeholder="+237(6xxxxxxxx)" required>
+                </div>
+
+                <button type="submit">Tester validation basique</button>
+            </form>
+        </section>
+
+        <!-- VALIDATIONS AVANCÉES -->
+        <section>
+            <h2>2. Validations Avancées avec Pattern</h2>
+            <form action="#" method="post">
+                
+                <div>
+                    <label for="code_postal">Code postal camerounais :</label>
+                    <input type="text" id="code_postal" name="code_postal" 
+                           pattern="[0-9]{5}" 
+                           placeholder="75001" 
+                           title="5 chiffres uniquement" required>
+                    <small>Exactement 5 chiffres</small>
+                </div>
+                
+                <div>
+                    <label for="mot_passe">Mot de passe fort :</label>
+                    <input type="password" id="mot_passe" name="mot_passe"
+                           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                           title="8 caractères minimum, 1 majuscule, 1 minuscule, 1 chiffre, 1 symbole" required>
+                    <small>Min 8 caractères: 1 majuscule, 1 minuscule, 1 chiffre, 1 symbole</small>
+                </div>
+                
+                <div>
+                    <label for="username">Nom d'utilisateur :</label>
+                    <input type="text" id="username" name="username"
+                           pattern="^[a-zA-Z0-9_]{3,20}$"
+                           title="3-20 caractères: lettres, chiffres, underscore uniquement" required>
+                    <small>3-20 caractères: lettres, chiffres, _ uniquement</small>
+                </div>
+
+                <button type="submit">Tester validation pattern</button>
+            </form>
+        </section>
+
+        <!-- LONGUEURS ET LIMITES -->
+        <section>
+            <h2>3. Contrôle des Longueurs et Valeurs</h2>
+            <form action="#" method="post">
+                
+                <div>
+                    <label for="bio">Bio (50-200 caractères) :</label>
+                    <textarea id="bio" name="bio" 
+                              minlength="50" maxlength="200" 
+                              placeholder="Décrivez-vous en 50-200 caractères..." required></textarea>
+                    <small>Entre 50 et 200 caractères</small>
+                </div>
+                
+                <div>
+                    <label for="age">Âge (18-99 ans) :</label>
+                    <input type="number" id="age" name="age" 
+                           min="18" max="99" required>
+                    <small>Entre 18 et 99 ans</small>
+                </div>
+                
+                <div>
+                    <label for="salaire">Salaire souhaité (€) :</label>
+                    <input type="number" id="salaire" name="salaire" 
+                           min="1000" max="10000" step="100" 
+                           placeholder="3000">
+                    <small>Entre 1000€ et 10000€ (par centaines)</small>
+                </div>
+                
+                <div>
+                    <label for="date_debut">Date de début (futur uniquement) :</label>
+                    <input type="date" id="date_debut" name="date_debut" 
+                           min="2024-08-28" required>
+                    <small>À partir de demain</small>
+                </div>
+
+                <button type="submit">Tester les limites</button>
+            </form>
+        </section>
+
+        <!-- MESSAGES PERSONNALISÉS -->
+        <section>
+            <h2>4. Messages d'Erreur Personnalisés</h2>
+            <form action="#" method="post" id="form-personnalise">
+                
+                <div>
+                    <label for="email_pro">Email professionnel :</label>
+                    <input type="email" id="email_pro" name="email_pro" required>
+                    <small>Utilisez votre email professionnel</small>
+                </div>
+                
+                <div>
+                    <label for="confirmation">Confirmer l'email :</label>
+                    <input type="email" id="confirmation" name="confirmation" required>
+                    <small>Doit être identique à l'email ci-dessus</small>
+                </div>
+
+                <button type="submit">Tester messages personnalisés</button>
+            </form>
+        </section>
+
+        <!-- FORMULAIRE COMPLET -->
+        <section>
+            <h2>5. Formulaire d'Inscription Complet</h2>
+            <form action="#" method="post" novalidate>
+                <fieldset>
+                    <legend>Informations personnelles</legend>
+                    
+                    <div>
+                        <label for="prenom_complet">Prénom :</label>
+                        <input type="text" id="prenom_complet" name="prenom" 
+                               pattern="^[a-zA-ZÀ-ÿ\s]{2,30}$" 
+                               title="2-30 caractères, lettres uniquement" required>
+                    </div>
+                    
+                    <div>
+                        <label for="nom_complet">Nom :</label>
+                        <input type="text" id="nom_complet" name="nom" 
+                               pattern="^[a-zA-ZÀ-ÿ\s]{2,30}$" 
+                               title="2-30 caractères, lettres uniquement" required>
+                    </div>
+                    
+                    <div>
+                        <label for="naissance_complet">Date de naissance :</label>
+                        <input type="date" id="naissance_complet" name="naissance" 
+                               min="1950-01-01" max="2006-08-27" required>
+                        <small>Vous devez être majeur</small>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Compte utilisateur</legend>
+                    
+                    <div>
+                        <label for="pseudo">Pseudo :</label>
+                        <input type="text" id="pseudo" name="pseudo"
+                               pattern="^[a-zA-Z0-9_]{3,15}$" 
+                               title="3-15 caractères: lettres, chiffres, underscore" required>
+                    </div>
+                    
+                    <div>
+                        <label for="email_compte">Email :</label>
+                        <input type="email" id="email_compte" name="email" required>
+                    </div>
+                    
+                    <div>
+                        <label for="mdp_compte">Mot de passe :</label>
+                        <input type="password" id="mdp_compte" name="password"
+                               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" 
+                               title="Min 8 caractères: 1 majuscule, 1 minuscule, 1 chiffre" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Acceptation</legend>
+                    <div>
+                        <input type="checkbox" id="cgu" name="cgu" required>
+                        <label for="cgu">J'accepte les conditions générales d'utilisation</label>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Je souhaite recevoir la newsletter</label>
+                    </div>
+                </fieldset>
+
+                <div>
+                    <button type="submit">Créer mon compte</button>
+                    <button type="reset">Tout effacer</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Formation Validation HTML5</p>
+    </footer>
+
+    <!-- SCRIPT POUR MESSAGES PERSONNALISÉS -->
+    <script>
+        // Messages personnalisés pour le formulaire 4
+        const form = document.getElementById('form-personnalise');
+        const email1 = document.getElementById('email_pro');
+        const email2 = document.getElementById('confirmation');
+        
+        form.addEventListener('submit', function(e) {
+            if (email1.value !== email2.value) {
+                email2.setCustomValidity('Les emails ne correspondent pas');
+                e.preventDefault();
+            } else {
+                email2.setCustomValidity('');
+            }
+        });
+        
+        email2.addEventListener('input', function() {
+            if (email1.value === email2.value) {
+                email2.setCustomValidity('');
+            }
+        });
+    </script>
+</body>
+</html>
