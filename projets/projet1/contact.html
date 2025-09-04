@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Restaurant, contact</title>
+</head>
+<body>
+    <!-- En-tête du site -->
+    <header>
+        <h1>Nous contacter</h1>
+        <nav>
+            <ul>
+                <a href="#index.html" title="Accueil">Accueil</a> &nbsp;&nbsp;&nbsp;
+                <a href="#menu.html" title="Voir le menu">Menu</a> &nbsp;&nbsp;&nbsp;
+                <a href="#contact.html" title="Nous contacter">Contact</a>
+            </ul>
+        </nav>
+        <img src="https://picsum.photos/400/200" alt="Image aléatoire" width="800" height="350">
+    </header>
+
+    <!-- Contenu principal -->
+    <main>
+        <section>
+            <article>
+                <h2>Où nous trouver</h2>
+                <p>
+                    128 Rue demonstration <br>
+                    34000 montpellier <br>
+                    France
+                </p>
+                
+                <h2>Nous envoyer un email</h2>
+                    <form action="#" method="post" id="formulaire">
+                        <div>
+                            <label for="email">Email :</label>
+                            <input type="email" id="email" name="email" title="Format email obligatoire" placeholder="nom@gmail.com" required>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="prenom_complet">Prénom :</label>
+                            <input type="text" id="prenom_complet" name="prenom" pattern="^[a-zA-ZÀ-ÿ\s]{2,30}$" 
+                                    title="2-30 caractères, lettres uniquement" placeholder="entrez votre prénom" required>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="nom_complet">Nom :</label>
+                            <input type="text" id="nom_complet" name="nom" pattern="^[a-zA-ZÀ-ÿ\s]{2,30}$" 
+                                    title="2-30 caractères, lettres uniquement" placeholder="entrez votre nom" required>
+                        </div>
+                        <br>
+                        <div>
+                            <button type="submit" id="soumettre" value="soumettre">Soumettre l'inscription</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="reset" id="annuler" value="annuler">Effacer le formulaire</button>
+                        </div>
+                    </form>
+                <figure>
+                    <img src="https://picsum.photos/300/200" alt="Image exemple">
+                    <figcaption>Légende de l'image</figcaption>
+                </figure>
+            </article>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2025 - Tous droits réservés</p>
+    </footer>
+</body>
+</html>

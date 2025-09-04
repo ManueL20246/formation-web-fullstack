@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox - Maîtriser les Layouts</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .demo-section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #007acc;
+        }
+        
+        /* FLEXBOX CONTAINER BASIQUE */
+        .flex-basic {
+            display: flex;
+            background-color: #e3f2fd;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .flex-item {
+            background-color: #007acc;
+            color: white;
+            padding: 20px;
+            margin: 5px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        /* JUSTIFY-CONTENT (axe principal) */
+        .justify-start {
+            display: flex;
+            justify-content: flex-start;
+            background-color: #fff3e0;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .justify-center {
+            display: flex;
+            justify-content: center;
+            background-color: #e8f5e8;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .justify-end {
+            display: flex;
+            justify-content: flex-end;
+            background-color: #fce4ec;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .justify-between {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f3e5f5;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .justify-around {
+            display: flex;
+            justify-content: space-around;
+            background-color: #e0f2f1;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        /* ALIGN-ITEMS (axe secondaire) */
+        .align-demo {
+            display: flex;
+            height: 150px;
+            background-color: #f5f5f5;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+        }
+        
+        .align-start {
+            align-items: flex-start;
+        }
+        
+        .align-center {
+            align-items: center;
+        }
+        
+        .align-end {
+            align-items: flex-end;
+        }
+        
+        .align-stretch {
+            align-items: stretch;
+        }
+        
+        .align-demo .flex-item {
+            margin: 5px;
+            min-height: 40px;
+        }
+        
+        /* FLEX-DIRECTION */
+        .flex-column {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff8e1;
+            padding: 10px;
+            margin: 10px 0;
+            height: 200px;
+        }
+        
+        .flex-row-reverse {
+            display: flex;
+            flex-direction: row-reverse;
+            background-color: #fce4ec;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        /* FLEX ITEMS PROPRIÉTÉS */
+        .flex-grow-demo {
+            display: flex;
+            background-color: #e8eaf6;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .flex-item-1 {
+            flex: 1;
+            background-color: #3f51b5;
+        }
+        
+        .flex-item-2 {
+            flex: 2;
+            background-color: #9c27b0;
+        }
+        
+        .flex-item-fixed {
+            flex: none;
+            width: 100px;
+            background-color: #ff5722;
+        }
+        
+        /* LAYOUTS PRATIQUES */
+        .header-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 15px 30px;
+            margin: 20px 0;
+        }
+        
+        .header-layout .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .header-layout nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        .header-layout nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        
+        .header-layout nav a:hover {
+            background-color: #555;
+        }
+        
+        .card-layout {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .card-flex {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .card-flex h3 {
+            color: #007acc;
+            margin-bottom: 15px;
+        }
+        
+        /* CENTRAGE PARFAIT */
+        .perfect-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            background-color: #e1f5fe;
+            border: 2px dashed #007acc;
+            margin: 20px 0;
+        }
+        
+        .centered-content {
+            background-color: #007acc;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Flexbox - Le Layout Moderne</h1>
+        
+        <!-- FLEXBOX BASIQUE -->
+        <div class="demo-section">
+            <h2>1. Flexbox Basique</h2>
+            <div class="flex-basic">
+                <div class="flex-item">Item 1</div>
+                <div class="flex-item">Item 2</div>
+                <div class="flex-item">Item 3</div>
+            </div>
+        </div>
+        
+        <!-- JUSTIFY-CONTENT -->
+        <div class="demo-section">
+            <h2>2. Justify-Content (Axe Principal)</h2>
+            
+            <h3>flex-start (défaut)</h3>
+            <div class="justify-start">
+                <div class="flex-item">A</div>
+                <div class="flex-item">B</div>
+                <div class="flex-item">C</div>
+            </div>
+            
+            <h3>center</h3>
+            <div class="justify-center">
+                <div class="flex-item">A</div>
+                <div class="flex-item">B</div>
+                <div class="flex-item">C</div>
+            </div>
+            
+            <h3>flex-end</h3>
+            <div class="justify-end">
+                <div class="flex-item">A</div>
+                <div class="flex-item">B</div>
+                <div class="flex-item">C</div>
+            </div>
+            
+            <h3>space-between</h3>
+            <div class="justify-between">
+                <div class="flex-item">A</div>
+                <div class="flex-item">B</div>
+                <div class="flex-item">C</div>
+            </div>
+            
+            <h3>space-around</h3>
+            <div class="justify-around">
+                <div class="flex-item">A</div>
+                <div class="flex-item">B</div>
+                <div class="flex-item">C</div>
+            </div>
+        </div>
+        
+        <!-- ALIGN-ITEMS -->
+        <div class="demo-section">
+            <h2>3. Align-Items (Axe Secondaire)</h2>
+            
+            <h3>flex-start</h3>
+            <div class="align-demo align-start">
+                <div class="flex-item">Haut</div>
+                <div class="flex-item">Haut</div>
+                <div class="flex-item">Haut</div>
+            </div>
+            
+            <h3>center</h3>
+            <div class="align-demo align-center">
+                <div class="flex-item">Centre</div>
+                <div class="flex-item">Centre</div>
+                <div class="flex-item">Centre</div>
+            </div>
+            
+            <h3>flex-end</h3>
+            <div class="align-demo align-end">
+                <div class="flex-item">Bas</div>
+                <div class="flex-item">Bas</div>
+                <div class="flex-item">Bas</div>
+            </div>
+            
+            <h3>stretch (défaut)</h3>
+            <div class="align-demo align-stretch">
+                <div class="flex-item">Étiré</div>
+                <div class="flex-item">Étiré</div>
+                <div class="flex-item">Étiré</div>
+            </div>
+        </div>
+        
+        <!-- FLEX-DIRECTION -->
+        <div class="demo-section">
+            <h2>4. Flex-Direction</h2>
+            
+            <h3>column (vertical)</h3>
+            <div class="flex-column">
+                <div class="flex-item">Premier</div>
+                <div class="flex-item">Deuxième</div>
+                <div class="flex-item">Troisième</div>
+            </div>
+            
+            <h3>row-reverse (horizontal inversé)</h3>
+            <div class="flex-row-reverse">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+        </div>
+        
+        <!-- FLEX GROW/SHRINK -->
+        <div class="demo-section">
+            <h2>5. Flex Items - Grow & Shrink</h2>
+            <div class="flex-grow-demo">
+                <div class="flex-item flex-item-1">flex: 1</div>
+                <div class="flex-item flex-item-2">flex: 2 (2x plus large)</div>
+                <div class="flex-item flex-item-fixed">width: 100px fixe</div>
+            </div>
+        </div>
+        
+        <!-- LAYOUTS PRATIQUES -->
+        <div class="demo-section">
+            <h2>6. Layouts Pratiques</h2>
+            
+            <h3>Header avec Navigation</h3>
+            <div class="header-layout">
+                <div class="logo">MonSite</div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <h3>Cards Layout</h3>
+            <div class="card-layout">
+                <div class="card-flex">
+                    <h3>🚀 Service 1</h3>
+                    <p>Description du premier service proposé par notre entreprise.</p>
+                </div>
+                <div class="card-flex">
+                    <h3>💼 Service 2</h3>
+                    <p>Description du deuxième service avec plus de détails.</p>
+                </div>
+                <div class="card-flex">
+                    <h3>🎯 Service 3</h3>
+                    <p>Troisième service avec des fonctionnalités avancées.</p>
+                </div>
+            </div>
+            
+            <h3>Centrage Parfait</h3>
+            <div class="perfect-center">
+                <div class="centered-content">
+                    <h3>Contenu Parfaitement Centré</h3>
+                    <p>Horizontal ET vertical !</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- RÉSUMÉ FLEXBOX -->
+        <div class="demo-section">
+            <h2>7. Résumé Flexbox</h2>
+            
+            <h3>Sur le CONTAINER (parent) :</h3>
+            <ul>
+                <li><code>display: flex;</code> - Active Flexbox</li>
+                <li><code>flex-direction: row|column;</code> - Direction</li>
+                <li><code>justify-content: center|space-between|flex-end;</code> - Axe principal</li>
+                <li><code>align-items: center|flex-start|stretch;</code> - Axe secondaire</li>
+                <li><code>gap: 20px;</code> - Espace entre les items</li>
+            </ul>
+            
+            <h3>Sur les ITEMS (enfants) :</h3>
+            <ul>
+                <li><code>flex: 1;</code> - Prend l'espace disponible</li>
+                <li><code>flex: 2;</code> - Prend 2x plus d'espace</li>
+                <li><code>flex: none;</code> - Garde sa taille fixe</li>
+                <li><code>align-self: center;</code> - Alignement individuel</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
